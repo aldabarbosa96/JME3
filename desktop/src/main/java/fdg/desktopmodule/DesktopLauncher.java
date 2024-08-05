@@ -1,6 +1,6 @@
 package fdg.desktopmodule;
 
-import fdg.game.FDG;
+import fdg.game.Nodes;
 import com.jme3.system.AppSettings;
 
 /**
@@ -9,7 +9,7 @@ import com.jme3.system.AppSettings;
  */
 public class DesktopLauncher {
     public static void main(String[] args) {
-        final FDG game = new FDG();
+        final Nodes game = new Nodes();
 
         final AppSettings appSettings = new AppSettings(true);
 
