@@ -1,0 +1,41 @@
+MaterialDef Unshaded {
+
+    MaterialParameters {
+        Texture2D ColorMap
+        Color Color ( ColorDiffuse )
+        Boolean VertexColor
+        Boolean UseMaterialColors
+        Color Ambient ( ColorAmbient )
+        Color Diffuse ( ColorDiffuse )
+        Color Specular ( ColorSpecular )
+        Float Shininess
+        Boolean SeperateTexCoord
+        Boolean WardIso
+        Boolean LowQuality
+        Boolean HighQuality
+    }
+
+    Technique {
+        VertexShader GLSL100 GLSL120 GLSL150 GLSL300: Shaders/Unshaded.vert
+        FragmentShader GLSL100 GLSL120 GLSL150 GLSL300: Shaders/Unshaded.frag
+
+        WorldParameters {
+            WorldViewProjectionMatrix
+            NormalMatrix
+            ViewMatrix
+            ViewProjectionMatrix
+            WorldMatrix
+        }
+
+        Defines {
+            VERTEX_COLOR : VertexColor
+            SEPARATE_TEXCOORD : SeperateTexCoord
+            WARD_ISO : WardIso
+            LOW_QUALITY : LowQuality
+            HIGH_QUALITY : HighQuality
+            NUM_BONES : NumberOfBones
+            INSTANCING : UseInstancing
+            USE_MATERIAL_COLORS : UseMaterialColors
+        }
+    }
+}
